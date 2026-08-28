@@ -13,7 +13,9 @@ Next.js と Docker を使う部署への配属希望に向けた入門プロジ�
 3. 書けたもののレビュー（指摘のみ。修正するのは自分）
 4. 詰まったときの段階的なヒント → それでもダメなら答え
 
-例外として、**`docs/` 配下は Claude が書く**（合意の記録であり、転記しても学習にならないため）。`notes/` 配下の学習ログは自分で書く（学習そのものであり、アプリが表示するコンテンツでもある）。同じ理由で、**`gh` による issue の作成・コメント・クローズも Claude が実行する**。`git` の操作（commit / push）は自分で行う。
+例外として、**`docs/` 配下は Claude が書く**（合意の記録であり、転記しても学習にならないため）。`notes/` 配下の学習ログは自分で書く（学習そのものであり、アプリが表示するコンテンツでもある）。同じ理由で、**`gh` による issue 操作と `git` の commit / push も Claude が実行する**（学習速度を優先する判断。git はこのプロジェクトの学習対象ではない）。コミットメッセージと分け方は Claude が決めるが、異論があれば言えばよい。
+
+**自分で打つのは `pnpm` と `docker` のコマンド**。この2つは配属先で手が覚えている必要があるため、代行しない。
 
 ## 1ステップの回し方
 
@@ -47,7 +49,7 @@ Next.js と Docker を使う部署への配属希望に向けた入門プロジ�
 
 ### Phase 0 — 環境
 
-- [ ] 1. `flake.nix` / `.envrc` / `.gitignore`。devShell に入るだけで `node` と `pnpm` が使え、バージョンが `flake.lock` で固定されている
+- [x] 1. `flake.nix` / `.envrc` / `.gitignore`。devShell に入るだけで `node` と `pnpm` が使え、バージョンが `flake.lock` で固定されている
 - [ ] 2. `pnpm init` から Next.js を導入。`package.json` / `tsconfig.json` / `next.config.ts` / `app/layout.tsx` / `app/page.tsx` の最小構成で `pnpm dev` が起動する
 - [ ] 3. ESLint + Prettier を導入する
 
@@ -88,3 +90,12 @@ Next.js と Docker を使う部署への配属希望に向けた入門プロジ�
 
 - macOS (aarch64-darwin)、Nix flakes 有効、direnv 導入済み
 - Docker Desktop インストール済み（Phase 2 の開始時に起動が必要）
+
+### clone した直後にやること
+
+**`.envrc` はリポジトリに含めない**方針を採っている。direnv の設定は個人の環境の問題であり、`.env*` を1つの無視パターンにまとめておく方が単純だという判断による。
+
+そのため clone 直後は direnv が自動で効かない。次のどちらかを行う。
+
+- `.envrc` に `use flake` と書いて `direnv allow` する（以後は `cd` するだけで環境に入る）
+- または、その都度 `nix develop` で devShell に入る
