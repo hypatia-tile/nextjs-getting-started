@@ -3,7 +3,7 @@ import type { DetailedReactHTMLElement, InputHTMLAttributes } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 
 const myElement: DetailedReactHTMLElement<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> = createElement(
-  'div',
+  "input",
   null,
 );
 
