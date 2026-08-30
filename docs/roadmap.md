@@ -61,8 +61,18 @@ Next.js と Docker を使う部署への配属希望に向けた入門プロジ�
 ### Phase 0 — 環境
 
 - [x] 1. `flake.nix` / `.envrc` / `.gitignore`。devShell に入るだけで `node` と `pnpm` が使え、バージョンが `flake.lock` で固定されている
-- [ ] 2. `pnpm init` から Next.js を導入。`package.json` / `tsconfig.json` / `next.config.ts` / `app/layout.tsx` / `app/page.tsx` の最小構成で `pnpm dev` が起動する
+- [ ] 2. `pnpm init` から Next.js を導入。`package.json` / `tsconfig.json` / `next.config.ts` / `app/layout.tsx` / `app/page.tsx` の最小構成で `pnpm dev` が起動する（**依存導入と scripts まで完了。残りは Phase 0.5 の後に再開**）
 - [ ] 3. ESLint + Prettier を導入する
+
+### Phase 0.5 — ターミナルで React を掴む
+
+Next.js もブラウザも使わない。**React は「HTML 文字列を作る関数」であり、ターミナルで完結する**という事実の上に立ち直す回。
+
+Step 2 の途中で「React が分からないまま Next.js の設定と格闘している」状態になったため、土台として挿入した。あわせて、本人が Web アプリ自体より処理系・型・ターミナルに関心があることが判明したため、そちらに寄せた教材にしている。
+
+- [ ] 2a. `createElement` だけで HTML 文字列を作り、標準出力に出す。コンポーネントがただの関数であることを入出力で確かめる
+- [ ] 2b. 同じものを JSX で書き直す。`node` が `SyntaxError` を出すのを踏み、変換を通して同じ出力に戻す。**JSX の正体が関数呼び出しであること**を実証する
+- [ ] 2c. props と `children` を型付きで渡す。ここまでやると `app/layout.tsx` は小さな練習問題になる
 
 ### Phase 1 — 読み取り専用アプリ（React / Next.js の本体）
 
