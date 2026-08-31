@@ -1,8 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": [
-    "experiments/**/*"
-  ],
+  "include": ["experiments/**/*"],
   "compilerOptions": {
     "rootDir": "./",
     "noEmit": false,

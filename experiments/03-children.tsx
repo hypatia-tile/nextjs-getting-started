@@ -1,6 +1,6 @@
 import { renderToStaticMarkup } from "react-dom/server";
 
-function Foo(props: {children: React.ReactNode}): React.ReactElement {
+function Foo(props: { children: React.ReactNode }): React.ReactElement {
   return <p>{props.children}</p>;
 }
 
