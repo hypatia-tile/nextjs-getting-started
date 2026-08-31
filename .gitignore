@@ -5,3 +5,4 @@ build/
 node_modules/
 .next/
 result
+next-env.d.ts
