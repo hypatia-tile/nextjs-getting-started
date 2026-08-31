@@ -30,7 +30,7 @@ const a = <Foo foo={foo} />
 ```
 
 とする. ここで`Foo()`は関数コンポーネントであり, `props`という一つのオブジェクトを引数に持つ. `<Foo>` の属性と
-`Foo()`の引数の`props`のプロパティは対応していて, `React.ReactNot`になれる型なら
+`Foo()`の引数の`props`のプロパティは対応していて, `React.ReactNode`になれる型なら
 `<Foo foo={foo}>`のように属性を通じて受け渡すことができる. `props.children`だけは特別で, `<Foo>`
 タグの要素として渡すことができる.
 
