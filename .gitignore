@@ -1,3 +1,4 @@
+build/
 .direnv
 .DS_Store
 .env*
