@@ -49,7 +49,7 @@ Next.js と Docker を使う部署への配属希望に向けた入門プロジ�
 | 言語 | TypeScript（strict）、Next.js 16 系 / React 19 系 / App Router |
 | 初期化 | `create-next-app` を使わず `pnpm init` から手書き |
 | CSS | 最小限の `globals.css` から始め、終盤で Tailwind を導入 |
-| Lint | 最初から ESLint + Prettier |
+| Lint | **Biome**（lint + format を1ツールで）。当初は ESLint + Prettier の予定だったが、TypeScript 7 と typescript-eslint が共存できず npm alias での回避が必要になるため、2026-09-01 に変更（issue #6 に調査記録） |
 | Docker | デーモンは既存の Docker Desktop。本番イメージ（multi-stage + standalone）を先に作り、後半で compose（app + Postgres）へ |
 | DB | PostgreSQL。アクセスは生 SQL（`pg` ドライバ）。テーブル定義は init SQL |
 | コンテンツ | 各ステップの学習ログを `notes/` に自分で書き、それをアプリが表示する（ドッグフーディング） |
@@ -62,7 +62,7 @@ Next.js と Docker を使う部署への配属希望に向けた入門プロジ�
 
 - [x] 1. `flake.nix` / `.envrc` / `.gitignore`。devShell に入るだけで `node` と `pnpm` が使え、バージョンが `flake.lock` で固定されている
 - [x] 2. `pnpm init` から Next.js を導入。`package.json` / `tsconfig.json` / `next.config.ts` / `app/layout.tsx` / `app/page.tsx` の最小構成で `pnpm dev` が起動する（**依存導入と scripts まで完了。残りは Phase 0.5 の後に再開**）
-- [ ] 3. ESLint + Prettier を導入する
+- [ ] 3. Biome を導入する（lint + format + import 整理）
 
 ### Phase 0.5 — ターミナルで React を掴む
 
