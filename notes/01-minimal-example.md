@@ -11,12 +11,13 @@ pnpm exec tsc -p tsconfig.emit.json
 とすることで, コンパイルオプションを手で打つ手間を省くことができる.
 `tsconfig.json` は`next dev` により書き換えられてしまうため, `outDir`や`rootDir` などのオプション
 は`tsconfig.emit.json`に退避してある.
-React16以降は
+React 17以降は`--jsx react-jsx`を指定することで,
 ```ts
 import {jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 ```
 
-のようにpreprocessorのようなものがimport文を自動挿入してくれるので, `tsx`ファイルを無駄が少なく書くことができる.
+のようにtscがimport文を自動挿入してくれるので, `tsx`ファイルを無駄が少なく書くことができる.
+(c.f. https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)
 
 ## Function Component
 
