@@ -1,10 +1,9 @@
 import { renderToStaticMarkup } from "react-dom/server";
 
-function Foo(props: {foo: React.ReactNode, children: React.ReactNode}): React.ReactElement {
-  return <div><p className="x">{props.children}</p><p>{props.foo}</p></div>;
+function Foo(props: {children: React.ReactNode}): React.ReactElement {
+  return <p>{props.children}</p>;
 }
 
 const foo = "bar";
-const bar = "foo";
-const a = <Foo foo={foo}>{bar}</Foo>;
+const a = <Foo>{foo}</Foo>;
 console.log(renderToStaticMarkup(a));
