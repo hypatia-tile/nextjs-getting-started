@@ -8,4 +8,4 @@ const myElement: DetailedReactHTMLElement<InputHTMLAttributes<HTMLInputElement>,
 );
 
 const html: string = renderToStaticMarkup(myElement);
-console.log(html);
+console.log(<string>html);

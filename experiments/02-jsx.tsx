@@ -3,6 +3,7 @@ function Foo(props: {foo: React.ReactNode, bar: React.ReactNode}): React.ReactEl
 }
 {
   const foo = "bar";
-  const a = <Foo foo={foo} bar={foo} />
+  const bar = <string>foo;
+  const a = <Foo foo={foo} bar={bar} />
   console.log(a);
 }
