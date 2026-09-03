@@ -62,7 +62,7 @@ Next.js と Docker を使う部署への配属希望に向けた入門プロジ�
 
 - [x] 1. `flake.nix` / `.envrc` / `.gitignore`。devShell に入るだけで `node` と `pnpm` が使え、バージョンが `flake.lock` で固定されている
 - [x] 2. `pnpm init` から Next.js を導入。`package.json` / `tsconfig.json` / `next.config.ts` / `app/layout.tsx` / `app/page.tsx` の最小構成で `pnpm dev` が起動する（**依存導入と scripts まで完了。残りは Phase 0.5 の後に再開**）
-- [ ] 3. Biome を導入する（lint + format + import 整理）
+- [x] 3. Biome を導入する（lint + format + import 整理）
 
 ### Phase 0.5 — ターミナルで React を掴む
 
